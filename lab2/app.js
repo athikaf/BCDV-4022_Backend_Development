@@ -6,7 +6,7 @@ app.use(bodyParser.json());
 
 const taskRouter = require("./tasks");
 
-app.use("/tasks", tasksRouter);
+app.use("/tasks", taskRouter);
 
 const PORT = process.env.PORT || 3000;
 
