@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const User = require("./user");
 
-mongoose.connect("mongodb://localhost:27017/user", {
+mongoose.connect("mongodb://localhost:27017/Athika_DB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -13,7 +13,7 @@ db.on("error", (error) => {
   console.error("MongoDB connection error");
 });
 
-db.open("open", async () => {
+db.once("open", async () => {
   console.log("Connected to MongoDB");
   try {
     const newUser = new User({
